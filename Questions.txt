@@ -69,3 +69,56 @@ What is the result?
     D) Z-Hello, Y-Hello2
     E) Compilation fails
 
+Q6) Given:
+
+void doStuff() {
+  int x;
+  if (Math.random() >= 0) {
+    x = 99;
+  }
+  sout("x is " + x);
+}
+what is the result of invoking doStuff();
+
+A) 0
+B) 99
+C) A or B depening on the random number
+D) Compilation fails
+E) Exception might arise
+
+Q7) Given:
+class P {
+  private int x;
+  public P(int v) {
+    x = v;
+    sout("in P constructor");
+  }
+}
+class Q extends P {
+}
+what is the result of this:
+P p = new Q();
+
+A) no output
+B) in P constructor
+C) Exception at runtime
+D) Compilation fails
+
+Q8) Given:
+abstract class P {
+  private int x;
+  void doMoreStuff() { sout("Hello from P"); }
+  abstract void doStuff();
+}
+class Q extends P {
+  void doMoreStuff() { sout("Hello from Q"); }
+}
+what is the result of this:
+new Q().doMoreStuff();
+
+A) Hello from P Hello from Q
+B) Hello from Q Hello from P
+C) Hello from Q -- popular
+D) Exception at runtime
+E) Compilation fails -- popular
+
