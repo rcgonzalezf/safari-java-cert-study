@@ -15,6 +15,11 @@ public class Example1 {
   public static void doStuff(int [] ia) {
 //    public int x = 9;
   }
+
+  public void callMethod1() {
+      StaticExample.doStaticStuff();
+  }
+
   public static void main(String[] args) {
 //    String s = new String("Hello");
     String s = "Hello";
@@ -46,7 +51,31 @@ public class Example1 {
     var x = 99;
     x += 10;
     var i = 0.99;
-    var b = (byte)99;
+    var b = (byte)99; // how to reference a byte or short using var.
     byte b2 = 123;
+
+
+    var s1 = 9.99;
+    var s5 = s1 + x;
+    System.out.println(s1);
+
+    var y1 = 1.; // is a double
+    System.out.println(y1);
+  }
+
+  public static void showX() {
+    // System.out.println("value of x is"+ m); // non-static variable m cannot be referenced from a static context
   }
 }
+
+class StaticExample {
+  public void method() {
+    doStaticStuff();
+    this.doStaticStuff(); // gives a warning not an error.
+    StaticExample.doStaticStuff();
+  }
+
+  public static void doStaticStuff() {
+  }
+}
+
