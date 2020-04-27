@@ -11,8 +11,10 @@ public class Example1 {
   // Normal function arguments are not "immediately initialized" so
   // this doesn't work
 //  public static void doStuff2(var x) {}
-  
-  public static void doStuff(int [] ia) {}
+
+  public static void doStuff(int [] ia) {
+//    public int x = 9;
+  }
   public static void main(String[] args) {
 //    String s = new String("Hello");
     String s = "Hello";
@@ -25,7 +27,11 @@ public class Example1 {
 //    var s3; //UNINITIALIZED NOT ALLOWED
 //    s3 = "Again";
 
-    int [] ia = {1, 2, 3,}; // UNAMBIGUOUS
+    int [] ia = {
+        1,
+        3,
+        2,
+    }; // UNAMBIGUOUS
     // NOT ALLOWED
 //    var s4 = {1, 2, 3, 4}; // short array literal form is
 //    doStuff({1, 2}); // NO!
@@ -39,6 +45,8 @@ public class Example1 {
 //    final var x = 99; // OK
     var x = 99;
     x += 10;
-
+    var i = 0.99;
+    var b = (byte)99;
+    byte b2 = 123;
   }
 }

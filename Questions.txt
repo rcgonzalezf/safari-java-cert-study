@@ -1,0 +1,27 @@
+1) Which are legal?
+
+A) var x = 99.9;
+B) public var x = "Hello";
+C) var []x = new int[]{1, 2, 3};
+D) public void doIt(var x) {}
+E) var x = new int[]{1,2,3,};
+
+2) What is the type of:
+
+99
+?
+A) byte
+B) int
+C) long
+D) double
+E) all of the above
+
+3) Which is true?
+
+FALSE A) static methods cannot access instance fields
+TRUE  B) 'this' exists only in instance methods
+TRUE  C) access to instance fields is controlled only by private/public etc and scope
+TRUE  D) This would be legal, if x is an instance field of class MyStuff
+   public static doStuff(MyStuff ms) { int x = ms.x; }
+
+   
