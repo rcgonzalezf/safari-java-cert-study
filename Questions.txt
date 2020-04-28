@@ -122,3 +122,22 @@ C) Hello from Q -- popular
 D) Exception at runtime
 E) Compilation fails -- popular
 
+9) Given:
+abstract class P { // line n1
+  private int x;
+  void doMoreStuff() { sout("Hello from P"); }
+  abstract void doStuff(); // line n2
+}
+abstract class Q extends P { // line n3
+  void doMoreStuff() { sout("Hello from Q"); }
+}
+
+Which individually would make this work?
+A) remove keyword abstract from line n1
+B) remove keyword abstract from line n2
+C) Both A and B together
+D) add the keyword abstract to line n3
+E) add an implementation of doStuff() to class Q
+
+
+ 
