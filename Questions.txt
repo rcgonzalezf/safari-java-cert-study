@@ -24,4 +24,101 @@ TRUE  C) access to instance fields is controlled only by private/public etc and 
 TRUE  D) This would be legal, if x is an instance field of class MyStuff
    public static doStuff(MyStuff ms) { int x = ms.x; }
 
-   
+4) Given:
+class X {
+    static int MAX_VAL = 100;
+    int value = 99;
+    public void setVal(int x) {
+      if (x <= MAX_VAL) value = x;
+    }
+  }
+and:
+    X a = new X();
+    X b = new X();
+    a.setVal(120);
+    System.out.print(a.value + ", ");
+    b.MAX_VAL = 150;
+    a.setVal(140);
+    System.out.println(a.value);
+
+What is the result?
+    A) 99, 99
+    B) 120, 140
+    C) 99, 140
+    D) Compilation failure
+    E) Exception at runtime
+
+Q5) Given:
+  class Y {
+    static String sayHi() { return "Y-Hello"; }
+    String sayHi2() { return "Y-Hello2"; }
+  }
+and:
+  class Z extends Y { // Liskov substution principle
+    static String sayHi() { return "Z-Hello"; }
+    String sayHi2() { return "Z-Hello2"; }
+  }
+and:
+    Y y = new Z();
+    System.out.println(y.sayHi() + ", " + y.sayHi2());
+
+What is the result?
+    A) Y-Hello, Y-Hello2
+    B) Y-Hello, Z-Hello2
+    C) Z-Hello, Z-Hello2
+    D) Z-Hello, Y-Hello2
+    E) Compilation fails
+
+Q6) Given:
+
+void doStuff() {
+  int x;
+  if (Math.random() >= 0) {
+    x = 99;
+  }
+  sout("x is " + x);
+}
+what is the result of invoking doStuff();
+
+A) 0
+B) 99
+C) A or B depening on the random number
+D) Compilation fails
+E) Exception might arise
+
+Q7) Given:
+class P {
+  private int x;
+  public P(int v) {
+    x = v;
+    sout("in P constructor");
+  }
+}
+class Q extends P {
+}
+what is the result of this:
+P p = new Q();
+
+A) no output
+B) in P constructor
+C) Exception at runtime
+D) Compilation fails
+
+Q8) Given:
+abstract class P {
+  private int x;
+  void doMoreStuff() { sout("Hello from P"); }
+  abstract void doStuff();
+}
+class Q extends P {
+  void doMoreStuff() { sout("Hello from Q"); }
+}
+what is the result of this:
+new Q().doMoreStuff();
+
+A) Hello from P Hello from Q
+B) Hello from Q Hello from P
+C) Hello from Q -- popular
+D) Exception at runtime
+E) Compilation fails -- popular
+
