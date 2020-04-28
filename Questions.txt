@@ -139,5 +139,16 @@ C) Both A and B together
 D) add the keyword abstract to line n3
 E) add an implementation of doStuff() to class Q
 
+10) Given:
+class X {
+  public void doStuff(int a, String b) {}
+}
 
+Which would be valid overloads if added to class X?
+
+A) public void doStuff(int b, String c) {}
+B) public int doStuff(int a, String b) { return 0; }
+C) public void doStuffX(int b, String c) {}
+D) public int doStuff(String c) {return 0;}
+E) public String doStuff(int a, String b, Date d) { return null; }
  
