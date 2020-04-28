@@ -151,4 +151,99 @@ B) public int doStuff(int a, String b) { return 0; }
 C) public void doStuffX(int b, String c) {}
 D) public int doStuff(String c) {return 0;}
 E) public String doStuff(int a, String b, Date d) { return null; }
- 
+
+11) Given:
+class X {
+    public int getValue() {return 1;}
+}
+
+which of these methods may individually be added
+to a subclass of this X?
+A) public int getValue(int x) {return 1;}
+B) public String getValue() {return "Hello";}
+C) public String getValue(int x) {return "Hello";}
+D) A), B), and C)
+E) A), and C)
+
+12) Given:
+  class Q23Base {
+    public Q23Base get() { return null; }
+  }
+  class Q23Sub extends Q23Base {
+    /* Which methods may individually be added to this class?
+    /*A)*/ //public Q23Base get() { return null; }
+    /*B)*/ //public Q23Sub get() { return null; }
+    /*C)*/ //public Runnable get() { return null; }
+    // A), B), and C)
+    // A), and B)
+  }
+
+13) Given:
+  class Base {
+    void doBaseStuff() {System.out.println("doBaseStuff");}
+  }
+
+  class Sub extends Base {
+    void doBaseStuff() {System.out.println("doSubStuff");}
+    void doOtherStuff() {
+      System.out.println("doOtherStuff");
+    }
+  }
+
+Base b = new Sub();
+b.doOtherStuff();
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q14) Given:
+    Base b = new Sub();
+    ((StringBuilder)b).concat("x");
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+Q15) Given
+    Base b = new Sub();
+    ((Runnable)b).run();
+
+What is the result?
+    A) doSubStuff
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+27 A) Full Lambdas for Java 11
+30 B) Modules
+6 C) access modifiers, encapsulation
+3 D) command-line operations
+
+Q16)
+  class Base { 
+    void doBaseStuff() {System.out.println("doBaseStuff");} 
+  }
+
+  class Sub extends Base {
+    void doBaseStuff() {System.out.println("doSubStuff");}
+    void doOtherStuff() { System.out.println("doOtherStuff"); }
+  }
+
+In the Base and Sub classes, which are true in isolation?
+A) doBaseStuff in Base can be marked throws Exception without causing errors
+B) doBaseStuff in Base can be marked throws RuntimeException without causing errors
+C) doBaseStuff in Sub can be marked throws Exception without causing errors
+D) doBaseStuff in Sub can be marked throws RuntimeException without causing errors
+E) if doBaseStuff in Base were marked throws Exception, then doBaseStuff in Sub can be marked throws IOException without causing errors
+
+Liskov and Access control
+
+
