@@ -79,3 +79,26 @@ class StaticExample {
   }
 }
 
+abstract class P {
+
+  // P(P this) {}  NOT ALLOWED
+
+  void doMoreStuff() {
+  }
+
+  abstract void doStuff();
+}
+
+abstract class Q extends P {
+
+  public Q(int q) {
+    super();
+  }
+
+  public void method() {
+    if (Math.random() > 0.5) {
+      throw new RuntimeException();
+    }
+  }
+}
+
