@@ -21,5 +21,19 @@ In Java SE are more than 8000 classes, and they are classes like:
  
  It doesn't support versioning.
  
- `Public` no longer means visible everywhere, it also controls reflection. 
+ `Public` no longer means visible everywhere, it also controls reflection.
  
+ ### To add Modules
+ 
+ Notice that access is enforced at the package level.
+ 
+ 1. Add a `module-info.java` in the package.
+ 1. Add the module you need in the `module-info.java`. 
+ ```java
+module Service {
+}
+```
+
+### Modular lib design
+- Package(s) to expose classes and functionality to the world
+- Using Modules to make packages hide their internal implementations.
