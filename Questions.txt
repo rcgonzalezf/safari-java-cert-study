@@ -231,7 +231,6 @@ Q16)
   class Base { 
     void doBaseStuff() {System.out.println("doBaseStuff");} 
   }
-
   class Sub extends Base {
     void doBaseStuff() {System.out.println("doSubStuff");}
     void doOtherStuff() { System.out.println("doOtherStuff"); }
@@ -244,6 +243,12 @@ C) doBaseStuff in Sub can be marked throws Exception without causing errors
 D) doBaseStuff in Sub can be marked throws RuntimeException without causing errors
 E) if doBaseStuff in Base were marked throws Exception, then doBaseStuff in Sub can be marked throws IOException without causing errors
 
-Liskov and Access control
+Q17) In the Base and Sub classes, which are true in isolation?
+N A) doBaseStuff in Base can be marked public without causing errors
+Y B) doBaseStuff in Base can be marked private without causing errors
+Y C) doBaseStuff in Sub can be marked public without causing errors
+Y D) doBaseStuff in Sub can be marked protected without causing errors
+N E) doBaseStuff in Sub can be marked private without causing errors
+
 
 
