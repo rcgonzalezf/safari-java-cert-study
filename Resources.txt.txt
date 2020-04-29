@@ -20,6 +20,9 @@ Pre-recorded video (~20 hours)
  - Java Collections: https://learning.oreilly.com/videos/modern-java-collections/9780134663524
  - And several other live classes
 
+Oracle Java 11 Exam objectives:
+https://education.oracle.com/java-se-11-programmer-i/pexam_1Z0-815
+
 Oracle Java Magazine
  - https://blogs.oracle.com/javamagazine/
  - https://blogs.oracle.com/javamagazine/issue-archives
