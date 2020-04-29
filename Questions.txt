@@ -250,5 +250,10 @@ Y C) doBaseStuff in Sub can be marked public without causing errors
 Y D) doBaseStuff in Sub can be marked protected without causing errors
 N E) doBaseStuff in Sub can be marked private without causing errors
 
-
+Q18) Which are legal?
+A) Object test = s -> s.length() > 3;
+B) Criterion<LocalDate> cld = (String s) -> {return s.length() > 3;};
+C) Criterion<Student> cs = s -> return s.getGrade() > 80;
+D) Criterion<Student> cs = (s) -> s.getGrade();
+E) Criterion<Object> co = o -> o == otherObject;
 

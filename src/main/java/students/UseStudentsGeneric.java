@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@FunctionalInterface
 interface Criterion<E> {
   boolean test(E s);
+//  void doStuff();
 }
 
 class LongString implements Criterion<String> {
@@ -50,6 +52,10 @@ public class UseStudentsGeneric {
     System.out.println("--------------------------");
   }
 
+  public static Criterion<String> getShortStringCriterion() {
+    return (String s) -> { return s.length() < 4; };
+  }
+
   public static void main(String[] args) {
     List<Student> roster = List.of(
         new Student("Fred", 78, "Math", "Physics"),
@@ -71,14 +77,22 @@ public class UseStudentsGeneric {
     ));
 //    show(getByCriterion(List.of("Fred", "Jim", "Sheila"),
 //        /*new Criterion<String>() {*/
-//          /*@Override
-//          public boolean test*/(String s) {
-//            return s.length() < 5;
-//          }
-//        /*}*/
+////          /*@Override
+////          public boolean test*/(String s) {
+////            return s.length() < 5;
+////          }
+////        /*}*/
 //    ));
     show(getByCriterion(List.of("Fred", "Jim", "Sheila"),
         (String s) -> { return s.length() < 5; }
     ));
+
+    // No context... What interface might we be trying to implement?
+//    Object longStringCriterion = (String s) -> { return s.length() < 5; };
+    Criterion<String> longStringCriterion;
+//    longStringCriterion = (String s) -> { return s.length() < 5; };
+//    longStringCriterion = (s) -> { return s.length() < 5; };
+//    longStringCriterion = s -> { return s.length() < 5; };
+    longStringCriterion = s -> s.length() < 5;
   }
 }
