@@ -1,0 +1,19 @@
+Module commands:
+
+Compiling:
+-d where to put output (long standing works in pre modules too!)
+--module-path where to find precompiled binaries for modules. Either a directory
+  containing module-info.class and more directories (with classes) representing
+  packages.
+--module-source-path where to look for source trees for code to compile. Should
+  point at directories that are "root of package structure" (and, presumably
+  module-info.java)
+  format uses * to represent where to substitute the desired module name
+--module comma separated list of modules to compile (dependent modules will
+  generally be compiled anyway)
+javac -d modules --module-path ./modules/ --module-source-path "./*/src" --module Client,Service
+
+-p equivalent to --module-path
+-m equivalent to --module. Running a program, 
+   --module takes ModuleName/package.ClassToRun 
+  596  java -p modules -m Client/theclient.Client
