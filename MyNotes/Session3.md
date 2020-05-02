@@ -37,3 +37,7 @@ module Service {
 ### Modular lib design
 - Package(s) to expose classes and functionality to the world
 - Using Modules to make packages hide their internal implementations.
+
+### Command line
+- Use command line:
+-- Commands like `jdeps`, `jmod`, `jlink`; and parameters like `module-path`, `module`. 
